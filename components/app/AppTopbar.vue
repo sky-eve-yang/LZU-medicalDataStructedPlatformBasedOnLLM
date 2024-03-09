@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
-const { locale } = useI18n() // 使用 Vue I18n 的 Composition API
+const { locale, locales, setLocale } = useI18n() // 使用 Vue I18n 的 Composition API
 const { layoutConfig, onMenuToggle } = useLayout()
 const outsideClickListener = ref(null)
 const topbarMenuActive = ref(false)
@@ -80,9 +80,13 @@ function openLanguageSelector (event: any) {
   languageOverlay.value.toggle(event)
 }
 
+const selectedLanguage = ref()
+selectedLanguage.value = locale.value
+
 // 语言切换函数
 function setLanguage (lang) {
-  locale.value = lang
+  setLocale(lang)
+  selectedLanguage.value = lang
   languageOverlay.value.hide() // 切换语言后关闭OverlayPanel
 }
 
