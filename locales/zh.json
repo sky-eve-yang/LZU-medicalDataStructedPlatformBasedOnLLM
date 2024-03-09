@@ -1,0 +1,58 @@
+{
+    "welcome": {
+        "hello": "您好",
+        "intro": "欢迎使用医疗文本数据实体识别系统"
+    },
+    "section": {
+        "to_transfer": {
+            "formkit_name": "medical_text",
+            "title": "待转换文本",
+            "placeholder": "请输入医疗文本数据（病历/检查报告/病理报告）...",
+            "button": {
+                "generate": "结构化生成"
+            }
+        },
+        "transfer_record": {
+            "title": "转换记录",
+            "button": {
+                "save": "保存本次转换"
+            }
+        },
+        "transfer_result": {
+            "title": "转换表格",
+            "export": "导出数据"
+        },
+        "setting": {
+            "title": "设置",
+            "schema_current": {
+                "formkit_name": "schema",
+                "title": "当前配置",
+                "placeholder": [
+                    "请输入要提取的结构化文本schema，如："
+                ],
+                "button": {
+                    "save": "保存配置"
+                },
+                "save": {
+                    "title": "Schema 命名",
+                    "placeholder": "请输入 Schema 名称",
+                    "button": {
+                        "confirm": "确认",
+                        "cancel": "取消"
+                    }
+                }
+            },
+            "schema_history": {
+                "formkit_name": "schema_history_id",
+                "title": "历史配置",
+                "placeholder": "搜索历史 Schema"
+            },
+            "model": {
+                "formkit_name": "model_id",
+                "title": "选择模型",
+                "placeholder": "请选择你要使用的大模型"
+            }
+        }
+        
+    }
+}

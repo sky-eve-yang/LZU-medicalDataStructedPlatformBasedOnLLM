@@ -1,5 +1,58 @@
 {
-  "welcome": "Willkommen",
-  "save": "Speichern",
-  "search": "Suchen"
+  "welcome": {
+      "hello": "Hallo",
+      "intro": "Willkommen beim System zur Erkennung von Entitäten in medizinischen Textdaten"
+  },
+  "section": {
+      "to_transfer": {
+          "formkit_name": "medical_text",
+          "title": "Zu konvertierender Text",
+          "placeholder": "Bitte geben Sie medizinische Textdaten ein (Krankenakten/Prüfberichte/Pathologieberichte)...",
+          "button": {
+              "generate": "Strukturiert generieren"
+          }
+      },
+      "transfer_record": {
+          "title": "Konvertierungsprotokoll",
+          "button": {
+              "save": "Diese Konvertierung speichern"
+          }
+      },
+      "transfer_result": {
+          "title": "Konvertierungstabelle",
+          "export": "Daten exportieren"
+      },
+      "setting": {
+          "title": "Einstellungen",
+          "schema_current": {
+              "formkit_name": "schema",
+              "title": "Aktuelle Konfiguration",
+              "placeholder": [
+                  "Bitte geben Sie das Schema des zu extrahierenden strukturierten Textes ein, wie z.B.:"
+              ],
+              "button": {
+                  "save": "Konfiguration speichern"
+              },
+              "save": {
+                  "title": "Schema Benennung",
+                  "placeholder": "Bitte geben Sie den Schemanamen ein",
+                  "button": {
+                      "confirm": "Bestätigen",
+                      "cancel": "Abbrechen"
+                  }
+              }
+          },
+          "schema_history": {
+              "formkit_name": "schema_history_id",
+              "title": "Historische Konfiguration",
+              "placeholder": "Historisches Schema suchen"
+          },
+          "model": {
+              "formkit_name": "model_id",
+              "title": "Modell auswählen",
+              "placeholder": "Bitte wählen Sie das Großmodell, das Sie verwenden möchten"
+          }
+      }
+      
+  }
 }

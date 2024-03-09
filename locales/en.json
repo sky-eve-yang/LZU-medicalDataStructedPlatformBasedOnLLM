@@ -1,5 +1,58 @@
 {
-  "welcome": "Welcome",
-  "save": "Save",
-  "search": "Search"
+    "welcome": {
+        "hello": "Hello",
+        "intro": "Welcome to the Medical Text Data Entity Recognition System"
+    },
+    "section": {
+        "to_transfer": {
+            "formkit_name": "medical_text",
+            "title": "Text to Convert",
+            "placeholder": "Please enter medical text data (medical records/check reports/pathology reports)...",
+            "button": {
+                "generate": "Generate Structured"
+            }
+        },
+        "transfer_record": {
+            "title": "Conversion Record",
+            "button": {
+                "save": "Save This Conversion"
+            }
+        },
+        "transfer_result": {
+            "title": "Conversion Table",
+            "export": "Export Data"
+        },
+        "setting": {
+            "title": "Settings",
+            "schema_current": {
+                "formkit_name": "schema",
+                "title": "Current Configuration",
+                "placeholder": [
+                    "Please enter the schema of the structured text to be extracted, such as:"
+                ],
+                "button": {
+                    "save": "Save Configuration"
+                },
+                "save": {
+                    "title": "Schema Naming",
+                    "placeholder": "Please Enter Schema Name",
+                    "button": {
+                        "confirm": "Confirm",
+                        "cancel": "Cancel"
+                    }
+                }
+            },
+            "schema_history": {
+                "formkit_name": "schema_history_id",
+                "title": "Historical Configuration",
+                "placeholder": "Search Historical Schema"
+            },
+            "model": {
+                "formkit_name": "model_id",
+                "title": "Select Model",
+                "placeholder": "Please select the large model you want to use"
+            }
+        }
+        
+    }
 }

@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
+const { locale } = useI18n() // 使用 Vue I18n 的 Composition API
 const { layoutConfig, onMenuToggle } = useLayout()
 const outsideClickListener = ref(null)
 const topbarMenuActive = ref(false)
@@ -71,6 +72,20 @@ function redirectToGithub (event: any) {
   window.open('https://github.com/sfxcode/nuxt3-primevue-starter', '_blank')
 }
 
+// OverlayPanel的引用
+const languageOverlay = ref<any>(null)
+
+// 打开语言选择OverlayPanel的方法
+function openLanguageSelector (event: any) {
+  languageOverlay.value.toggle(event)
+}
+
+// 语言切换函数
+function setLanguage (lang) {
+  locale.value = lang
+  languageOverlay.value.hide() // 切换语言后关闭OverlayPanel
+}
+
 </script>
 
 <template>
@@ -96,6 +111,10 @@ function redirectToGithub (event: any) {
         <i class="pi pi-user" />
         <span>Profile</span>
       </button>
+      <button class="p-link layout-topbar-button" @click="openLanguageSelector">
+        <i class="pi pi-globe" />
+        <span>Language</span>
+      </button>
       <button class="p-link layout-topbar-button" @click="toggle">
         <i class="pi pi-cog" />
         <span>Settings</span>
@@ -105,6 +124,27 @@ function redirectToGithub (event: any) {
         <span>Github</span>
       </button>
     </div>
+
+    <client-only>
+      <OverlayPanel ref="languageOverlay" append-to="body" style="width: 200px">
+        <h6>Language</h6>
+        <!-- 语言选项 -->
+        <div class="field-radiobutton">
+          <RadioButton id="lang-en" v-model="selectedLanguage" value="en" @click="setLanguage('en')" />
+          <label for="lang-en">English</label>
+        </div>
+        <div class="field-radiobutton">
+          <RadioButton id="lang-zh" v-model="selectedLanguage" value="zh" @click="setLanguage('zh')" />
+          <label for="lang-zh">简体中文</label>
+        </div>
+        <div class="field-radiobutton">
+          <RadioButton id="lang-de" v-model="selectedLanguage" value="de" @click="setLanguage('de')" />
+          <label for="lang-de">German</label>
+        </div>
+      <!-- 添加更多语言选项 -->
+      </OverlayPanel>
+    </client-only>
+
     <client-only>
       <OverlayPanel id="overlay_panel" ref="op" append-to="body" style="width: 200px">
         <h6>Theme</h6>

@@ -7,6 +7,10 @@ const availableLocales = computed(() => {
   return locales.value?.filter(l => l.code !== locale.value)
 })
 
+console.log(availableLocales.value)
+console.log(locales.value)
+console.log(locale.value)
+
 </script>
 
 <template>

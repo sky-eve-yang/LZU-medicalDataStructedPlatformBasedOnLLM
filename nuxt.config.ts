@@ -1,7 +1,13 @@
 import pkg from './package.json'
 
 export default defineNuxtConfig({
-  devtools: true,
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true
+    }
+  },
   ssr: true,
   runtimeConfig: {
     public: {
@@ -29,11 +35,12 @@ export default defineNuxtConfig({
   i18n: {
     lazy: true,
     langDir: 'locales',
-    defaultLocale: 'en',
+    defaultLocale: 'zh',
     strategy: 'no_prefix',
     locales: [
       { code: 'en', file: 'en.json', name: 'English' },
-      { code: 'de', file: 'de.json', name: 'German' }
+      { code: 'de', file: 'de.json', name: 'German' },
+      { code: 'zh', file: 'zh.json', name: '简体中文' }
     ],
     vueI18n: './vue-i18n.options.ts'
   },

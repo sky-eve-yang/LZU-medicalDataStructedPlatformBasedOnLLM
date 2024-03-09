@@ -23,8 +23,8 @@ const schema = reactive(
       name: 'email',
       label: 'Email',
       help: 'This will be used for your account.',
-      validation: 'required|email'
-
+      validation: 'required|email',
+      placeholder: 'please input your email'
     },
     {
       $formkit: 'primeTextarea',
@@ -32,6 +32,7 @@ const schema = reactive(
       label: 'Text',
       rows: '5'
     },
+    '$myText + 这是后缀',
     {
       $formkit: 'primeCalendar',
       name: 'myCalendar',
@@ -98,7 +99,7 @@ const schema = reactive(
       name: 'knob',
       label: 'Use Knob',
       value: 50
-    }
+    } 
   ]
 )
 
